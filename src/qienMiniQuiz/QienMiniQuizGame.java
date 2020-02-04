@@ -20,7 +20,7 @@ Fase 2:
 Fase 3:
 - Geef de speler een hint optie bij het invullen van HINT
 - trek 1 punt af indien speler om een hint heeft gevraagd
-- Maak in totaal 10 vragen. Einde spel deel de score in in een classificatie. 9 || 10 = uitstekend, 7 || 8 = goed, 5 || 6 = matig else = slecht
+- Einde spel deel de score in in een classificatie.
 
 Fase 4:
 - Meerdere spelers: Vraag om aantal spelers, vraag om naam, om en om aan de beurt.
@@ -42,6 +42,7 @@ public class QienMiniQuizGame {
 		String oplossingVraag2 = "40";
 		String oplossingVraag3 = "wit";
 		String oplossingVraag4 = "2";
+		String oplossingVraag5 = "ushi";
 		
 		int score = 0;
 	
@@ -175,6 +176,51 @@ public class QienMiniQuizGame {
 				System.out.println("Dat is nog steeds fout het antwoord was: " + oplossingVraag4);
 			}
 			System.out.println("Score is: " + score);
+		}
+		
+		System.out.println("\nVraag 5: Welk bekend Japans typetje wordt door Wendy van Dijk gespeeld?");
+		String antwoordvraag5 = mijnScanner.nextLine().toLowerCase();
+		if (antwoordvraag4.equals("hint")) {
+			System.out.println("Hip japans restaurant - s");
+			System.out.println("Geef nu jouw antwoord");
+			score -= 1;
+			antwoordvraag4 = mijnScanner.nextLine().toLowerCase();
+		}
+		
+		if (antwoordvraag5.equals(oplossingVraag5)) {
+			System.out.println("Dat is goed!");
+			score += 3;
+			System.out.println("Score is nu: " + score);
+		} else {
+			System.out.println("Dat is fout! \nProbeer het nogmaals");
+			antwoordvraag5 = mijnScanner.nextLine().toLowerCase();
+			if (antwoordvraag4.equals("hint")) {
+				System.out.println("Hip japans restaurant - s");
+				System.out.println("Geef nu jouw antwoord");
+				score -= 1;
+				antwoordvraag5 = mijnScanner.nextLine().toLowerCase();
+			}
+			if (antwoordvraag5.equals(oplossingVraag5)) {
+				System.out.println("Dat is goed!");
+				score += 3;
+			} else {
+				System.out.println("Dat is nog steeds fout het antwoord was: " + oplossingVraag5);
+			}
+			System.out.println("Score is: " + score);
+		}
+		
+		System.out.println("Dat was de quiz jouw score is: " + score);
+		if (score <= 8) {
+			System.out.println("Dat kan beter!");
+		}
+		else if (score == 9 || score == 10) {
+			System.out.println("Redelijk gedaan.");
+		}
+		else if (score == 11 || score == 12) {
+			System.out.println("Good job");
+		}
+		else if (score > 12) {
+			System.out.println("Geweldig! Je bent een Quizmaster");
 		}
 		
 	}
