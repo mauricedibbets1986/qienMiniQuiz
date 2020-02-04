@@ -54,8 +54,15 @@ public class QienMiniQuizGame {
 			score += 1;
 			System.out.println("Score is nu: " + score);
 		} else {
-			System.out.println("Dat is fout!");
-			System.out.println("Score is nog steeds: " + score);
+			System.out.println("Dat is fout! \nProbeer het nogmaals");
+			antwoordvraag1 = mijnScanner.nextLine().toLowerCase();
+			if (antwoordvraag1.equals(oplossingVraag1)) {
+				System.out.println("Dat is goed!");
+				score += 1;
+			} else {
+				System.out.println("Dat is nog steeds fout het antwoord was: " + oplossingVraag1);
+			}
+			System.out.println("Score is: " + score);
 		}
 		
 		System.out.println("\nVraag 2: Hoeveel is 6 x 6 : 2 + 22");
@@ -65,8 +72,15 @@ public class QienMiniQuizGame {
 			score += 1;
 			System.out.println("Score is nu: " + score);
 		} else {
-			System.out.println("Dat is fout!");
-			System.out.println("Score is nog steeds: " + score);
+			System.out.println("Dat is fout! \nProbeer het nogmaals");
+			antwoordvraag2 = mijnScanner.nextLine().toLowerCase();
+			if (antwoordvraag2.equals(oplossingVraag2)) {
+				System.out.println("Dat is goed!");
+				score += 1;
+			} else {
+				System.out.println("Dat is nog steeds fout het antwoord was: " + oplossingVraag2);
+			}
+			System.out.println("Score is: " + score);
 		}
 		
 		System.out.println("\nVraag 3: Welke kleur begint altijd bij het schaken?");
@@ -76,8 +90,15 @@ public class QienMiniQuizGame {
 			score += 1;
 			System.out.println("Score is nu: " + score);
 		} else {
-			System.out.println("Dat is fout!");
-			System.out.println("Score is nog steeds: " + score);
+			System.out.println("Dat is fout! \nProbeer het nogmaals");
+			antwoordvraag3 = mijnScanner.nextLine().toLowerCase();
+			if (antwoordvraag3.equals(oplossingVraag3)) {
+				System.out.println("Dat is goed!");
+				score += 1;
+			} else {
+				System.out.println("Dat is nog steeds fout het antwoord was: " + oplossingVraag3);
+			}
+			System.out.println("Score is: " + score);
 		}
 		
 		System.out.println("\nVraag 4: Wie was de eerste president van Amerika?\n Typ (1) voor Abraham Lincoln\n Typ (2) voor George Washington\n Typ (3) voor Benjamin Franklin");
@@ -87,8 +108,15 @@ public class QienMiniQuizGame {
 			score += 1;
 			System.out.println("Score is nu: " + score);
 		} else {
-			System.out.println("Dat is fout!");
-			System.out.println("Score is nog steeds: " + score);
+			System.out.println("Dat is fout! \nProbeer het nogmaals");
+			antwoordvraag4 = mijnScanner.nextLine().toLowerCase();
+			if (antwoordvraag4.equals(oplossingVraag4)) {
+				System.out.println("Dat is goed!");
+				score += 1;
+			} else {
+				System.out.println("Dat is nog steeds fout het antwoord was: " + oplossingVraag4);
+			}
+			System.out.println("Score is: " + score);
 		}
 		
 	}
