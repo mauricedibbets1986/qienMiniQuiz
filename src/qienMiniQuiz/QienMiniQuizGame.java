@@ -34,14 +34,13 @@ import java.util.Random;
 
 public class QienMiniQuizGame {
 
-	static int aantalSpelers;
+	static int aantalSpelers = 0;
 	static Scanner mijnScanner = new Scanner(System.in);
 	static ArrayList <Speler> lijstSpelers = new ArrayList <Speler> ();
 	
 	public static void main(String[] args){
 		
-		spelersAanmaken();
-		
+				
 		String oplossingVraag1 = "wenen";
 		String oplossingVraag2 = "40";
 		String oplossingVraag3 = "wit";
@@ -55,6 +54,8 @@ public class QienMiniQuizGame {
 		+ "Weet je een vraag niet en wil je een hint? typ (hint), \ndit betekent wel dat je een punt aftrek krijgt. \n"
 		+ "Per goed antwoord krijg je 3 punten. \n"
 		+ "**************************************************************************** \n");
+		
+		spelersAanmaken();
 		
 		System.out.println("\nVraag 1: Wat is de hoofdstad van Oostenrijk?");
 		String antwoordvraag1 = mijnScanner.nextLine().toLowerCase();
@@ -229,18 +230,26 @@ public class QienMiniQuizGame {
 
 	}
 	
-	static void spelersAanmaken()
-	{
-		System.out.println("Met Hoeveel Spelers wil je spelen?");
-		aantalSpelers = mijnScanner.nextInt();
-		System.out.println("Vul de namen in van de spelers");
-		
-		for (int x = 0; x<=aantalSpelers; x++) 
-		{
-			String naam = mijnScanner.nextLine();
-			lijstSpelers.add(x, new Speler(naam));
-			
+	static void spelersAanmaken() {
+		while (aantalSpelers == 0 || aantalSpelers > 4) {
+			System.out.println("Met Hoeveel Spelers wil je spelen? (max 4)");
+			int inputSpelers = mijnScanner.nextInt();
+			if (inputSpelers > 4) {
+				System.out.println("Dat is meer dan het maximum aantal spelers");
+			}
+			else {
+				aantalSpelers = inputSpelers;
+				System.out.println("Vul de namen in van de spelers");
+				
+				for (int x = 0; x<=aantalSpelers; x++) 
+				{
+					String naam = mijnScanner.nextLine();
+					lijstSpelers.add(x, new Speler(naam));
+					
+				}
+			}
 		}
+			
 	}
 	
 }
