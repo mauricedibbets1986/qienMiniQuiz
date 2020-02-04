@@ -36,8 +36,20 @@ public class QienMiniQuizGame {
 
 	
 	public static void main(String[] args){
+		
+		Scanner mijnScanner = new Scanner(System.in);
+		String oplossingVraag1 = "wenen";
+		int score = 0;
 	
-		System.out.println("******************************** \nwelkom bij de minquiz, have fun! \n********************************");
+		System.out.println("******************************** \nwelkom bij de minquiz, have fun! \n******************************** \n\n");
+		
+		System.out.println("Vraag 1: Wat is de hoofdstad van Oostenrijk?");
+		String antwoordvraag1 = mijnScanner.nextLine().toLowerCase();
+		if (antwoordvraag1.equals(oplossingVraag1)) {
+			System.out.println("Dat is goed!");
+		} else {
+			System.out.println("Dat is fout!");
+		}
 		
 	}
 	
