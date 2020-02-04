@@ -39,16 +39,44 @@ public class QienMiniQuizGame {
 		
 		Scanner mijnScanner = new Scanner(System.in);
 		String oplossingVraag1 = "wenen";
+		String oplossingVraag2 = "40";
+		String oplossingVraag3 = "wit";
+		
 		int score = 0;
 	
 		System.out.println("******************************** \nwelkom bij de minquiz, have fun! \n******************************** \n\n");
 		
-		System.out.println("Vraag 1: Wat is de hoofdstad van Oostenrijk?");
+		System.out.println("\nVraag 1: Wat is de hoofdstad van Oostenrijk?");
 		String antwoordvraag1 = mijnScanner.nextLine().toLowerCase();
 		if (antwoordvraag1.equals(oplossingVraag1)) {
 			System.out.println("Dat is goed!");
+			score += 1;
+			System.out.println("Score is nu: " + score);
 		} else {
 			System.out.println("Dat is fout!");
+			System.out.println("Score is nog steeds: " + score);
+		}
+		
+		System.out.println("\nVraag 2: Hoeveel is 6 x 6 : 2 + 22");
+		String antwoordvraag2 = mijnScanner.nextLine().toLowerCase();
+		if (antwoordvraag2.equals(oplossingVraag2)) {
+			System.out.println("Dat is goed!");
+			score += 1;
+			System.out.println("Score is nu: " + score);
+		} else {
+			System.out.println("Dat is fout!");
+			System.out.println("Score is nog steeds: " + score);
+		}
+		
+		System.out.println("\nVraag 3: Welke kleur begint altijd bij het schaken?");
+		String antwoordvraag3 = mijnScanner.nextLine().toLowerCase();
+		if (antwoordvraag3.equals(oplossingVraag3)) {
+			System.out.println("Dat is goed!");
+			score += 1;
+			System.out.println("Score is nu: " + score);
+		} else {
+			System.out.println("Dat is fout!");
+			System.out.println("Score is nog steeds: " + score);
 		}
 		
 	}
