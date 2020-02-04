@@ -29,15 +29,19 @@ Fase 4:
 
 
 import java.util.Scanner;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class QienMiniQuizGame {
 
-
+	static int aantalSpelers;
+	static Scanner mijnScanner = new Scanner(System.in);
+	static ArrayList <Speler> lijstSpelers = new ArrayList <Speler> ();
 	
 	public static void main(String[] args){
 		
-		Scanner mijnScanner = new Scanner(System.in);
+		spelersAanmaken();
+		
 		String oplossingVraag1 = "wenen";
 		String oplossingVraag2 = "40";
 		String oplossingVraag3 = "wit";
@@ -222,7 +226,38 @@ public class QienMiniQuizGame {
 		else if (score > 12) {
 			System.out.println("Geweldig! Je bent een Quizmaster");
 		}
+
+	}
+	
+	static void spelersAanmaken()
+	{
+		System.out.println("Met Hoeveel Spelers wil je spelen?");
+		aantalSpelers = mijnScanner.nextInt();
+		System.out.println("Vul de namen in van de spelers");
 		
+		for (int x = 0; x<=aantalSpelers; x++) 
+		{
+			String naam = mijnScanner.nextLine();
+			lijstSpelers.add(x, new Speler(naam));
+			
+		}
+	}
+	
+}
+
+class Speler {
+	private String name;
+	private int score = 0;
+	Speler (String naam) {
+		name = naam;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 }
