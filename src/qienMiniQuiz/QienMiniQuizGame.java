@@ -37,6 +37,8 @@ public class QienMiniQuizGame {
 	static int aantalSpelers = 0;
 	static Scanner mijnScanner = new Scanner(System.in);
 	static ArrayList <Speler> lijstSpelers = new ArrayList <Speler> ();
+	static boolean spel = false;
+	static int aanDeBeurt;
 	
 	public static void main(String[] args){
 		
@@ -56,7 +58,72 @@ public class QienMiniQuizGame {
 		+ "**************************************************************************** \n");
 		
 		spelersAanmaken();
+		System.out.printf("\nWe spelen met de volgende spelers: ");
+		for(Speler spelers : lijstSpelers) {
+            System.out.println(spelers.getName());
+        }
 		
+		spel = true;
+		
+		while (spel == true) {
+			
+			
+			
+			
+			if (aanDeBeurt >= aantalSpelers) {
+				aanDeBeurt = 0;
+			}
+			aanDeBeurt++;
+			
+			System.out.println("\n" + "\n" + lijstSpelers.get(aanDeBeurt).getName() + " het is jouw beurt! Beantwoord de volgende vraag: ");
+			
+			
+			
+			
+			if (aanDeBeurt >= aantalSpelers) {
+				aanDeBeurt = 0;
+			}
+			aanDeBeurt++;
+			
+			System.out.println("\n" + "\n" + lijstSpelers.get(aanDeBeurt).getName() + " het is jouw beurt! Beantwoord de volgende vraag: ");
+			
+			if (aanDeBeurt >= aantalSpelers) {
+				aanDeBeurt = 0;
+			}
+			aanDeBeurt++;
+			
+			System.out.println("\n" + "\n" + lijstSpelers.get(aanDeBeurt).getName() + " het is jouw beurt! Beantwoord de volgende vraag: ");
+			
+			
+			
+			
+			if (aanDeBeurt >= aantalSpelers) {
+				aanDeBeurt = 0;
+			}
+			aanDeBeurt++;
+			
+			System.out.println("\n" + "\n" + lijstSpelers.get(aanDeBeurt).getName() + " het is jouw beurt! Beantwoord de volgende vraag: ");
+			
+			if (aanDeBeurt >= aantalSpelers) {
+				aanDeBeurt = 0;
+			}
+			aanDeBeurt++;
+			
+			System.out.println("\n" + "\n" + lijstSpelers.get(aanDeBeurt).getName() + " het is jouw beurt! Beantwoord de volgende vraag: ");
+			
+			
+			
+			
+			if (aanDeBeurt >= aantalSpelers) {
+				aanDeBeurt = 0;
+			}
+			aanDeBeurt++;
+			
+			System.out.println("\n" + "\n" + lijstSpelers.get(aanDeBeurt).getName() + " het is jouw beurt! Beantwoord de volgende vraag: ");
+			
+			spel = false;
+			
+		}
 		System.out.println("\nVraag 1: Wat is de hoofdstad van Oostenrijk?");
 		String antwoordvraag1 = mijnScanner.nextLine().toLowerCase();
 		if (antwoordvraag1.equals("hint")) {
