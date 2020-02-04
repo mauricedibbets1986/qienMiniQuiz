@@ -39,6 +39,8 @@ public class QienMiniQuizGame {
 	static ArrayList <Speler> lijstSpelers = new ArrayList <Speler> ();
 	static boolean spel = false;
 	static int aanDeBeurt;
+	static int aantalRondes;
+	static int aantalBeurten;
 	
 	public static void main(String[] args){
 		
@@ -67,62 +69,23 @@ public class QienMiniQuizGame {
 		
 		while (spel == true) {
 			
-			
-			
-			
 			if (aanDeBeurt >= aantalSpelers) {
 				aanDeBeurt = 0;
 			}
 			aanDeBeurt++;
 			
+			
 			System.out.println("\n" + "\n" + lijstSpelers.get(aanDeBeurt).getName() + " het is jouw beurt! Beantwoord de volgende vraag: ");
+			// vraag ophalen
+			// aantal beurten en rondes berekenen 5 ronden geweest game is klaar
 			
+			aantalBeurten++;
+			aantalRondes = aantalBeurten / aantalSpelers;
 			
-			
-			
-			if (aanDeBeurt >= aantalSpelers) {
-				aanDeBeurt = 0;
+			if (aantalRondes == 5) {
+				spel = false;
 			}
-			aanDeBeurt++;
-			
-			System.out.println("\n" + "\n" + lijstSpelers.get(aanDeBeurt).getName() + " het is jouw beurt! Beantwoord de volgende vraag: ");
-			
-			if (aanDeBeurt >= aantalSpelers) {
-				aanDeBeurt = 0;
-			}
-			aanDeBeurt++;
-			
-			System.out.println("\n" + "\n" + lijstSpelers.get(aanDeBeurt).getName() + " het is jouw beurt! Beantwoord de volgende vraag: ");
-			
-			
-			
-			
-			if (aanDeBeurt >= aantalSpelers) {
-				aanDeBeurt = 0;
-			}
-			aanDeBeurt++;
-			
-			System.out.println("\n" + "\n" + lijstSpelers.get(aanDeBeurt).getName() + " het is jouw beurt! Beantwoord de volgende vraag: ");
-			
-			if (aanDeBeurt >= aantalSpelers) {
-				aanDeBeurt = 0;
-			}
-			aanDeBeurt++;
-			
-			System.out.println("\n" + "\n" + lijstSpelers.get(aanDeBeurt).getName() + " het is jouw beurt! Beantwoord de volgende vraag: ");
-			
-			
-			
-			
-			if (aanDeBeurt >= aantalSpelers) {
-				aanDeBeurt = 0;
-			}
-			aanDeBeurt++;
-			
-			System.out.println("\n" + "\n" + lijstSpelers.get(aanDeBeurt).getName() + " het is jouw beurt! Beantwoord de volgende vraag: ");
-			
-			spel = false;
-			
+		
 		}
 		System.out.println("\nVraag 1: Wat is de hoofdstad van Oostenrijk?");
 		String antwoordvraag1 = mijnScanner.nextLine().toLowerCase();
