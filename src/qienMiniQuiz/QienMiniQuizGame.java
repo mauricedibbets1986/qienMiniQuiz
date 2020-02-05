@@ -72,6 +72,8 @@ public class QienMiniQuizGame {
 		for(Speler spelers : lijstSpelers) {
             System.out.println(spelers.getName());
         }
+		int itemCount = lijstSpelers.size();
+		System.out.println(itemCount);
 		
 		spel = true;
 		
@@ -97,6 +99,7 @@ public class QienMiniQuizGame {
 		}
 
 		System.out.println("\n\n**************************************************************************** \nDat was de quiz jullie score is:\n");
+		lijstSpelers.remove(0);
 		toonScore();
 	}
 	
@@ -480,7 +483,7 @@ public class QienMiniQuizGame {
 				break;
 			case 12:
 				if (vraag12Gesteld == false) {
-					System.out.println("Op de hoeveelste van Februari is het Qien Code Face#3?");
+					System.out.println("Op de hoeveelste van Februari is het Qien Code Cafe#3?");
 					String antwoordvraag12 = mijnScanner.nextLine().toLowerCase();
 					if (antwoordvraag12.equals("hint")) {
 						aantalPunten -= 1;
@@ -627,15 +630,14 @@ public class QienMiniQuizGame {
 				aantalSpelers = inputSpelers;
 				System.out.println("Vul de namen in van de spelers");
 				
-				for (int x = 0; x<=aantalSpelers; x++) 
+				for (int i = 0; i <= aantalSpelers; i++) 
 				{
 					String naam = mijnScanner.nextLine();
-					lijstSpelers.add(x, new Speler(naam));
+					lijstSpelers.add(i, new Speler(naam));
 					
 				}
 			}
 		}
-			
 	}
 	
 	static void toonScore() {
