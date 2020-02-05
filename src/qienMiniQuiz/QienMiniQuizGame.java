@@ -58,26 +58,8 @@ public class QienMiniQuizGame {
 	static boolean vraag14Gesteld = false;
 	static boolean vraag15Gesteld = false;
 	static boolean vraag16Gesteld = false;
-	static boolean vraag17Gesteld = false;
-	static boolean vraag18Gesteld = false;
-	static boolean vraag19Gesteld = false;
-	static boolean vraag20Gesteld = false;
-	static boolean vraag21Gesteld = false;
-	static boolean vraag22Gesteld = false;
-	static boolean vraag23Gesteld = false;
-	static boolean vraag24Gesteld = false;
-	static boolean vraag25Gesteld = false;
-	static boolean vraag26Gesteld = false;
-	static boolean vraag27Gesteld = false;
-	static boolean vraag28Gesteld = false;
-	static boolean vraag29Gesteld = false;
-	static boolean vraag30Gesteld = false;
 	
 	public static void main(String[] args){
-		
-
-	
-		int score = 0;
 	
 		System.out.println("**************************************************************************** \n"
 		+ "welkom bij de MINIQUIZ, have fun! \n"
@@ -100,9 +82,8 @@ public class QienMiniQuizGame {
 			}
 			aanDeBeurt++;
 			
-			
 			System.out.println("\n" + "\n" + lijstSpelers.get(aanDeBeurt).getName() + " het is jouw beurt! Beantwoord de volgende vraag: ");
-			// vraag ophalen
+
 			vraagStellen();
 			
 			
@@ -114,23 +95,9 @@ public class QienMiniQuizGame {
 			}
 		
 		}
-		
-		
 
-		System.out.println("Dat was de quiz jouw score is: " + score);
-		if (score <= 8) {
-			System.out.println("Dat kan beter!");
-		}
-		else if (score == 9 || score == 10) {
-			System.out.println("Redelijk gedaan.");
-		}
-		else if (score == 11 || score == 12) {
-			System.out.println("Good job");
-		}
-		else if (score > 12) {
-			System.out.println("Geweldig! Je bent een Quizmaster");
-		}
-
+		System.out.println("\n\n**************************************************************************** \nDat was de quiz jullie score is:\n");
+		toonScore();
 	}
 	
 	static void vraagStellen() {
@@ -632,6 +599,16 @@ public class QienMiniQuizGame {
 					vraag15Gesteld = true;
 				}
 				break;
+			case 16:
+				if (vraag16Gesteld == false) {
+					System.out.println("Geen vraag! Wat heb jij een geluk! Je krijgt 5 gratis punten");
+					aantalPunten += 5;
+					lijstSpelers.get(aanDeBeurt).verhoogScore(aantalPunten);
+					System.out.println("Score is nu: " + lijstSpelers.get(aanDeBeurt).getScore());
+					vraagGesteld = true;
+					vraag16Gesteld = true;
+				}
+				break;
 			default:
 				vraagGesteld = true;
 				break;
@@ -643,7 +620,7 @@ public class QienMiniQuizGame {
 		while (aantalSpelers == 0 || aantalSpelers > 3) {
 			System.out.println("Met Hoeveel Spelers wil je spelen? (max 3)");
 			int inputSpelers = mijnScanner.nextInt();
-			if (inputSpelers > 4) {
+			if (inputSpelers > 3) {
 				System.out.println("Dat is meer dan het maximum aantal spelers");
 			}
 			else {
@@ -659,6 +636,26 @@ public class QienMiniQuizGame {
 			}
 		}
 			
+	}
+	
+	static void toonScore() {
+		
+		for(Speler spelers : lijstSpelers) {
+			System.out.println(spelers.getName());
+            System.out.printf("jij hebt gescoord: %d", spelers.getScore());
+            if (spelers.getScore() <= 8) {
+    			System.out.println("\nDat kan beter!");
+    		}
+    		else if (spelers.getScore() == 9 || spelers.getScore() == 10) {
+    			System.out.println("\nRedelijk gedaan.");
+    		}
+    		else if (spelers.getScore() == 11 || spelers.getScore() == 12) {
+    			System.out.println("\nGood job");
+    		}
+    		else if (spelers.getScore() > 12) {
+    			System.out.println("\nGeweldig! Je bent een Quizmaster");
+    		}
+		}
 	}
 	
 }
