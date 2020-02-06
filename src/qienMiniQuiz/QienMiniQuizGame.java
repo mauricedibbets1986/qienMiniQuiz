@@ -30,6 +30,7 @@ Fase 4:
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class QienMiniQuizGame {
@@ -72,8 +73,6 @@ public class QienMiniQuizGame {
 		for(Speler spelers : lijstSpelers) {
             System.out.println(spelers.getName());
         }
-		int itemCount = lijstSpelers.size();
-		System.out.println(itemCount);
 		
 		spel = true;
 		
@@ -98,7 +97,6 @@ public class QienMiniQuizGame {
 		
 		}
 
-		System.out.println("\n\n**************************************************************************** \nDat was de quiz jullie score is:\n");
 		lijstSpelers.remove(0);
 		toonScore();
 	}
@@ -462,7 +460,7 @@ public class QienMiniQuizGame {
 				}
 				break;
 			case 10:
-				if (vraag9Gesteld == false) {
+				if (vraag10Gesteld == false) {
 					System.out.println("Geen vraag! 3 Bonuspunten!!");
 					aantalPunten += 3;
 					lijstSpelers.get(aanDeBeurt).verhoogScore(aantalPunten);
@@ -640,8 +638,9 @@ public class QienMiniQuizGame {
 		}
 	}
 	
+	
 	static void toonScore() {
-		
+		System.out.println("\n\n**************************************************************************** \nDat was de quiz jullie score is:\n");
 		for(Speler spelers : lijstSpelers) {
 			System.out.println(spelers.getName());
             System.out.printf("jij hebt gescoord: %d", spelers.getScore());
@@ -687,5 +686,4 @@ class Speler {
 		this.score += punten;
 	}
 
-	
 }
